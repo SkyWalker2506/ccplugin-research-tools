@@ -2,7 +2,10 @@
   "name": "research-tools",
   "version": "1.0.0",
   "description": "Claude Code plugin bundling web research, project analysis, PRD generation, and autonomous PRD execution (Ralph).",
-  "author": "SkyWalker2506",
+  "author": {
+    "name": "Musab Kara",
+    "url": "https://github.com/SkyWalker2506"
+  },
   "license": "MIT",
   "category": "productivity",
   "keywords": [

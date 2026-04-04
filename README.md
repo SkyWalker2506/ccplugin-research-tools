@@ -1,6 +1,14 @@
-# research-tools
+# research-tools — Claude Code Plugin
+
+by [Musab Kara](https://linkedin.com/in/musab-kara-85580612a) · [GitHub](https://github.com/SkyWalker2506)
 
 Claude Code plugin that bundles research and analysis functionality into four commands.
+
+## Install
+
+```bash
+claude plugin install research-tools@musabkara-claude-marketplace
+```
 
 ## Commands
 
@@ -10,20 +18,6 @@ Claude Code plugin that bundles research and analysis functionality into four co
 | `/project-analysis` | Deep 12-category project audit with parallel background agents |
 | `/prd` | Generate a Product Requirements Document for a new feature |
 | `/ralph` | Convert PRD markdown to `prd.json` for autonomous execution |
-
-## Installation
-
-```bash
-claude plugin add SkyWalker2506/ccplugin-research-tools
-```
-
-Or clone and link locally:
-
-```bash
-git clone https://github.com/SkyWalker2506/ccplugin-research-tools.git
-cd ccplugin-research-tools
-claude plugin link .
-```
 
 ## MCP Dependency
 
@@ -65,3 +59,8 @@ ccplugin-research-tools/
 ## License
 
 MIT
+
+## Part of
+
+- [claude-config](https://github.com/SkyWalker2506/claude-config) — Multi-Agent OS for Claude Code (110 agents, local-first routing)
+- [Plugin Marketplace](https://github.com/SkyWalker2506/claude-marketplace) — Browse & install all 14 plugins
