@@ -2,10 +2,7 @@
   "name": "research-tools",
   "version": "1.0.0",
   "description": "Claude Code plugin bundling web research, project analysis, PRD generation, and autonomous PRD execution (Ralph).",
-  "author": {
-    "name": "Musab Kara",
-    "url": "https://github.com/SkyWalker2506"
-  },
+  "author": "Musab Kara",
   "license": "MIT",
   "category": "productivity",
   "keywords": [
@@ -17,23 +14,13 @@
     "web-research"
   ],
   "commands": [
-    {
-      "path": "commands/web-research.md"
-    },
-    {
-      "path": "commands/project-analysis.md"
-    },
-    {
-      "path": "commands/prd.md"
-    },
-    {
-      "path": "commands/ralph.md"
-    }
+    "commands/web-research.md",
+    "commands/project-analysis.md",
+    "commands/prd.md",
+    "commands/ralph.md"
   ],
   "skills": [
-    {
-      "path": "skills/research-tools/SKILL.md"
-    }
+    "skills/research-tools/SKILL.md"
   ],
   "mcpServers": {
     "fetch": {
