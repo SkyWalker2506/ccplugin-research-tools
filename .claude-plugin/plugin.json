@@ -17,18 +17,30 @@
     "web-research"
   ],
   "commands": [
-    "commands/web-research.md",
-    "commands/project-analysis.md",
-    "commands/prd.md",
-    "commands/ralph.md"
+    {
+      "path": "commands/web-research.md"
+    },
+    {
+      "path": "commands/project-analysis.md"
+    },
+    {
+      "path": "commands/prd.md"
+    },
+    {
+      "path": "commands/ralph.md"
+    }
   ],
   "skills": [
-    "skills/research-tools/SKILL.md"
+    {
+      "path": "skills/research-tools/SKILL.md"
+    }
   ],
   "mcpServers": {
     "fetch": {
       "command": "npx",
-      "args": ["mcp-fetch-server"]
+      "args": [
+        "mcp-fetch-server"
+      ]
     }
   }
 }
