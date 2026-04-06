@@ -21,40 +21,11 @@ claude plugin install research-tools@musabkara-claude-marketplace
 
 ## MCP Dependency
 
-This plugin requires the **fetch** MCP server for web research capabilities. The `.mcp.json` file configures it automatically:
-
-```json
-{
-  "mcpServers": {
-    "fetch": {
-      "command": "npx",
-      "args": ["mcp-fetch-server"]
-    }
-  }
-}
-```
+This plugin requires the **fetch** MCP server for web research capabilities. The `.mcp.json` file configures it automatically.
 
 ## Auto-Trigger
 
-The `skills/research-tools/SKILL.md` skill detects research, analysis, and PRD-related intent and routes to the correct command automatically. You can also invoke commands directly by name.
-
-## Structure
-
-```
-ccplugin-research-tools/
-  .claude-plugin/
-    plugin.json          # Plugin manifest
-  commands/
-    web-research.md      # Market research agent
-    project-analysis.md  # 12-category deep analysis
-    prd.md               # PRD generator
-    ralph.md             # PRD-to-JSON converter
-  skills/
-    research-tools/
-      SKILL.md           # Auto-trigger routing
-  .mcp.json              # MCP server configuration
-  README.md
-```
+The `skills/research-tools/SKILL.md` skill detects research, analysis, and PRD-related intent and routes to the correct command automatically.
 
 ## License
 
@@ -63,4 +34,5 @@ MIT
 ## Part of
 
 - [claude-config](https://github.com/SkyWalker2506/claude-config) — Multi-Agent OS for Claude Code (134 agents, local-first routing)
-- [Plugin Marketplace](https://github.com/SkyWalker2506/claude-marketplace) — Browse & install all 14 plugins
+- [Plugin Marketplace](https://github.com/SkyWalker2506/claude-marketplace) — Browse & install all 18 plugins
+- [ClaudeHQ](https://github.com/SkyWalker2506/ClaudeHQ) — Claude ecosystem HQ
