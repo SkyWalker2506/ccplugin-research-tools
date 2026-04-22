@@ -4,7 +4,25 @@ Deep 12-category project analysis with parallel background agents.
 
 > Before starting, suggest the user run `/compact` to free up context for the agents.
 
-## Step 1 -- Model Selection
+## Flags
+
+| Flag | Behavior |
+|------|----------|
+| _(none)_ | Interactive mode — asks model and categories one by one |
+| `--all` | Non-interactive mode — selects all 12 categories automatically, uses Sonnet |
+| `--all --model opus` | Same but with Opus for all categories |
+| `--quick` | Non-interactive, selects Security, Architecture, Performance only (3 categories, Sonnet) |
+
+## Step 1 -- Mode Detection
+
+If `--all` or `--quick` flag is present → skip Steps 2 and 3 (interactive questions), go directly to Step 4.
+
+- `--all` → model = Sonnet (unless `--model opus` or `--model haiku` specified), categories = all 12
+- `--quick` → model = Sonnet, categories = [Security & Infrastructure, Architecture & Code Quality, Performance & Core Web Vitals]
+
+If no flag → proceed to interactive Steps 2 and 3.
+
+## Step 2 -- Model Selection (interactive only)
 
 ```
 Choose the agent model for analysis:
@@ -16,7 +34,7 @@ Choose the agent model for analysis:
 Your choice (1/2/3/4):
 ```
 
-## Step 2 -- Category Selection (ask one by one)
+## Step 3 -- Category Selection (interactive only, ask one by one)
 
 For each category, ask:
 
@@ -42,16 +60,16 @@ Categories:
 
 After all categories are asked, summarize selections and confirm.
 
-## Step 3 -- Launch Agents (parallel, background)
+## Step 4 -- Launch Agents (parallel, background)
 
 For each selected category, launch a separate background Agent:
 
 - Auto-detect project root (current working directory)
-- Model: user's choice from Step 1
+- Model: user's choice from Step 2, or Sonnet for `--all`/`--quick`
 - Max 25 tool calls (15 scanning, 10 research)
 - Output: `[PROJECT]/analysis/[NN_category].md`
 
-## Step 4 -- Master Report
+## Step 5 -- Master Report
 
 When all agents complete, launch an Opus agent to:
 
@@ -61,7 +79,7 @@ When all agents complete, launch an Opus agent to:
 - Top 20 action items ranked by impact/effort
 - Cost table (estimated effort per item)
 
-## Step 5 -- Present to User
+## Step 6 -- Present to User
 
 1. Master report summary
 2. File locations
