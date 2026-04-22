@@ -9,7 +9,8 @@ Do NOT implement anything. Only create the PRD.
 1. Receive feature description from the user
 2. Ask 3-5 clarifying questions (with lettered options for quick "1A, 2C" answers)
 3. Generate structured PRD
-4. Save to `tasks/prd-[feature-name].md`
+4. Ensure output directory exists: `mkdir -p tasks/`
+5. Save to `tasks/prd-[feature-name].md`
 
 ## Questions Format
 
@@ -58,3 +59,4 @@ Criteria must be verifiable. "Works correctly" = bad. "Button shows confirmation
 
 - Format: Markdown
 - Location: `tasks/prd-[feature-name].md`
+- Pre-save: always run `mkdir -p tasks/` via Bash before writing the file
