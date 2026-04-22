@@ -126,3 +126,20 @@ What next?
   2) Save as notes (append to docs/recommendations.md)
   3) Nothing (report is informational only)
 ```
+
+## MCP Dependency & Error Handling
+
+This command requires the **fetch** MCP server. If WebSearch or WebFetch calls fail, check:
+
+```
+MCP unavailable — /web-research requires the fetch MCP server.
+
+Remediation:
+  1. Ensure .mcp.json is present at project root (run: ls .mcp.json)
+  2. Restart Claude Code to reload MCP servers
+  3. Verify uvx is installed: uvx --version
+  4. Manually install: uvx mcp-server-fetch
+
+If MCP is unavailable, fall back to providing general guidance based on training data,
+clearly noting that live web data was not fetched.
+```
