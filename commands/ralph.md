@@ -66,3 +66,37 @@ Default: 10 iterations. Each iteration spawns a fresh Claude Code instance.
 If `prd.json` already exists with a different `branchName`, archive first:
 - Copy current `prd.json` + `progress.txt` to `archive/YYYY-MM-DD-feature/`
 - `ralph.sh` handles this automatically
+
+## Output Validation
+
+After generating `prd.json`, validate the output against this schema before finishing:
+
+### Required Fields Check
+```
+project        → string, non-empty
+branchName     → string, matches pattern "ralph/[a-z0-9-]+"
+description    → string, non-empty
+userStories    → array, length >= 1
+```
+
+### Per-Story Check
+```
+id             → string, matches "US-NNN"
+title          → string, non-empty, max 80 chars
+description    → string, contains "As a", "I want", "so that"
+acceptanceCriteria → array, length >= 2, includes "Typecheck passes"
+priority       → integer >= 1
+passes         → boolean, must be false
+notes          → string (can be empty)
+```
+
+### Self-Correction
+If any field fails validation, fix it before saving the file. Do not output an invalid `prd.json`. Show a brief validation summary at the end:
+
+```
+prd.json validated:
+  ✓ 7 user stories
+  ✓ All required fields present
+  ✓ All acceptance criteria include "Typecheck passes"
+  ✓ branchName: ralph/user-onboarding-redesign
+```
