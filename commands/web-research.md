@@ -18,6 +18,16 @@ Web research agent -- competitors, user reviews, market trends, UX patterns, mon
 | `/web-research accessibility` | WCAG, a11y patterns |
 | `/web-research localization` | Multi-language, RTL support |
 | Any topic | Focused research on that topic |
+|  | Rapid 5-minute scan — top competitors + key insights only (max 10 tool calls) |
+
+## Quick Mode (--quick)
+
+When `--quick` flag is provided:
+- Max 10 tool calls total
+- Covers only: top 3 competitors + top 3 user insights + 2 quick win opportunities
+- Model: Sonnet (not Opus) for speed
+- Output clearly labeled: `[QUICK SCAN]`
+- No caching, no follow-up questions
 
 ## Execution
 
